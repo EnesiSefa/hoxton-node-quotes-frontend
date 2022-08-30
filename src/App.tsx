@@ -8,14 +8,17 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:4000/quotes")
       .then((resp) => resp.json())
-      .then((quotes) => setQuotes(quotes));
+      .then((quotesFromServer) => setQuotes(quotesFromServer));
   }, []);
   return (
     <div className="App">
       <header className="App-header">
         <ul>
           {quotes.map((quote) => (
-            <li>{quote}</li>
+            <li>
+              <h1>{quote.name}</h1>
+              <p>{quote.quote}</p>
+            </li>
           ))}
         </ul>
       </header>
