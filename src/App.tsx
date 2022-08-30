@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
+import {Quote} from "./types"
 function App() {
-  const [quotes, setQuotes] = useState([]);
+  const [quotes, setQuotes] = useState<Quote[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:4000/quotes")
@@ -13,9 +13,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ul>
+        <ul className="list">
           {quotes.map((quote) => (
-            <li>
+            <li className="list-item">
               <h1>{quote.name}</h1>
               <p>{quote.quote}</p>
             </li>

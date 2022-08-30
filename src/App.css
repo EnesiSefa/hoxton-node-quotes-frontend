@@ -40,3 +40,14 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.list{
+  display: grid;
+  grid-auto-flow: column;
+  word-wrap: break-word;
+  font-size: 1.2vw;
+  grid-gap: 20px;
+}
+.list-item{
+  list-style: none;
+}
