@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import {Quote} from "./types"
+import { Quote } from "./types";
 function App() {
   const [quotes, setQuotes] = useState<Quote[]>([]);
 
@@ -16,7 +16,10 @@ function App() {
         <ul className="list">
           {quotes.map((quote) => (
             <li className="list-item">
-              <h1>{quote.name}</h1>
+              <img className="pic" src={quote.photo} alt="" />
+              <h1>
+                {quote.firstName} {quote.lastName}
+              </h1>
               <p>{quote.quote}</p>
             </li>
           ))}
